@@ -1,0 +1,7 @@
+* The following is a program written for a computer architecture class. Note that all of the code is inside the ÒfirstÓ folder. The folder ÒsecondÓ is left empty in order for autograder to work correctly (it was extra credit which I did not do)
+* Given 2 arguments, 1 data file and 1 dictionary file, the program counts the total number of instances of each word from the dictionary file that appears within the data files. It then returns the total count for each word appearing in the data file.
+* Test cases to run can be found under autograder --> autograder_data and correct returns can be found under autograder --> testcases --> first
+* I used a trie to store all of the unique words from the dictionary file. Each node of the trie contains a field called "children," which is an array of type Node that has a length of 26(for each letter of the alphabet). Therefore, each unique word is read in from the dictionary file and placed within the trie character by character, according to what letter the character is. 
+* The time complexity for this part is 0(nk), where n = number of unique words and k = maximum word length. 
+* After all unique dictionary words are placed into the trie, the data file is scanned, and then each word from the data file is compared to the trie. Based on the results, the program can determine the prefixCount and wordCount for each dictionary word. This part has time complexity 0(mk), where m = total number of words. 
+* Since m > n, the overall runtime of the program should be 0(mk). 
